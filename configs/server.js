@@ -6,7 +6,6 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js'
-import authUsers from '../src/users/user.routes.js';
 import authCategories from '../src/Category/category.routes.js';
 import authPost from '../src/Publications/publications.routes.js'
 import authComments from '../src/comments/comments.routes.js';
@@ -22,7 +21,6 @@ const configurarMiddlewares = (app) => {
 }
 
 const configurarRutas = (app) =>{
-    app.use("/Blog/v1/users",authUsers);
     app.use("/Blog/v1/categories",authCategories);
     app.use("/Blog/v1/publications",authPost);
     app.use("/Blog/v1/comments",authComments);

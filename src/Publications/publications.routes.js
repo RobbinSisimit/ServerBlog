@@ -15,6 +15,7 @@ router.post("/",
     createPublication
 );
 router.get("/", getPublications);
+
 router.put("/:id", 
     [
         check("id", "No es un ID válido").isMongoId(),

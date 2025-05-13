@@ -3,11 +3,24 @@ import Publications from './publications.model.js';
 
 export const createPublication = async (req, res) => {
   try {
-    const publication = new Publications(req.body);
+    const data= req.body;
+    const publication = new Publications({
+      ...data,
+    });
     await publication.save();
-    res.status(201).json(publication);
+    
+    res.status(200).json({
+        succes: true,
+        publication
+    
+    });
+
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(500).json({
+        succes: false,
+        msg: 'Error al crear la publicacion',
+        error: error.message
+    })
   }
 };
 
