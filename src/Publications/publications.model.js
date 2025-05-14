@@ -14,6 +14,10 @@ const PublicationsSchema = new mongoose.Schema({
     required: [true, "El category es obligatorio"],
     enum: ["Practica_Supervisada", "Taller", "Tecnologia"]
   },
+  comments:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Comments"
+  }],
   status: {
     type: Boolean,
     default: true

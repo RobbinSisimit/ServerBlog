@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import {Schema, model} from "mongoose";
 
-const CommentSchema = new mongoose.Schema({
+const CommentSchema = new Schema({
     author: {
         type: String,
         required: [true, "El author es obligatorio"]
@@ -10,7 +10,7 @@ const CommentSchema = new mongoose.Schema({
         required: [true, "El content es obligatorio"]
     },
     publication: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Publications",
         required: [true, "El publicationId es obligatorio"]
     },
@@ -24,5 +24,10 @@ const CommentSchema = new mongoose.Schema({
     versionKey: false
 });
 
+CommentSchema.methods.toJSON = function () {
+    const {__v,_id,...comments} = this.toObject()
+    comments.uid = _id
+    return comments
+}
 
-export default mongoose.model("Comments", CommentSchema);
+export default model("Comments", CommentSchema);

@@ -1,4 +1,6 @@
 import Publications from './publications.model.js';
+import comments from '../comments/comment.model.js'
+
 
 
 export const createPublication = async (req, res) => {
@@ -25,11 +27,36 @@ export const createPublication = async (req, res) => {
 };
 
 export const getPublications = async (req, res) => {
+  const query = { status: true };
+
   try {
-    const publications = await Publications.find({ status: true });
-    res.json(publications);
+    const publications = await Publications.find(query)
+      .populate('comments', 'author content');
+
+    // Desestructuramos los campos si queremos devolver solo los necesarios
+    const formatted = publications.map(pub => {
+      const { title, description, category, comments } = pub;
+      return {
+        title,
+        description,
+        category,
+        comments: comments.map(c => ({
+          author: c.author,
+          content: c.content
+        }))
+      };
+    });
+
+    res.status(200).json({
+      success: true,
+      msg: 'Lista de publicaciones',
+      publications: formatted
+    });
+
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({
+      error: error.message
+    });
   }
 };
 
