@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "277d91ca-4daf-4e0d-8f1f-3e609a6f55f1",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37414241",
+		"_collection_link": "https://kinal8.postman.co/workspace/Hotel-Management~042192a7-c47a-4062-a153-a319b3a8c97d/collection/37414241-277d91ca-4daf-4e0d-8f1f-3e609a6f55f1?action=share&source=collection_link&creator=37414241"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "http://127.0.0.1:3010/Blog/v1/publications/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"materia mas aburrida\",\r\n    \"description\":\"zzz\",\r\n    \"category\":\"Tecnologia\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3010/Blog/v1/publications/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3010",
+							"path": [
+								"Blog",
+								"v1",
+								"publications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:3010/Blog/v1/publications/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"materia mas aburrida\",\r\n    \"description\":\"zzz\",\r\n    \"category\":\"Tecnologia\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3010/Blog/v1/publications/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3010",
+							"path": [
+								"Blog",
+								"v1",
+								"publications",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "http://localhost:3010/Blog/v1/comments/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\":\"robbin\",\r\n    \"content\":\"aburrido\",\r\n    \"publication\":\"68250bfe05226abbba3cad93\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/Blog/v1/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"Blog",
+								"v1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3010/Blog/v1/comments/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\":\"robbin\",\r\n    \"content\":\"jsfjdsfsdfsjdfhjk\",\r\n    \"publication\":\"6824fb68630a7a3f59c86f5c\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/Blog/v1/comments/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"Blog",
+								"v1",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "http://localhost:3010/Blog/v1/comments/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\":\"robbin\",\r\n    \"content\":\"jsfjdsfsdfsjdfhjk\",\r\n    \"publication\":\"6824fb68630a7a3f59c86f5c\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3010/Blog/v1/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"Blog",
+								"v1",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
