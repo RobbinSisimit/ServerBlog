@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "682577dda30a8ebbc365e412"
+  },
+  "name": "Tecnologia",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682577dda30a8ebbc365e416"
+  },
+  "name": "Taller",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682577dda30a8ebbc365e419"
+  },
+  "name": "PracticaSupervisada",
+  "__v": 0
+}]

@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "68258eee86a7fdd4dca77396"
+  },
+  "author": "robbin",
+  "content": "aburrido",
+  "publication": {
+    "$oid": "6825791b86a7fdd4dca7736f"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T06:51:26.749Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T06:51:26.749Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68258ef986a7fdd4dca7739a"
+  },
+  "author": "dulce",
+  "content": "interesante",
+  "publication": {
+    "$oid": "6825791b86a7fdd4dca7736f"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T06:51:37.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T06:51:37.850Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68258f0486a7fdd4dca7739e"
+  },
+  "author": "dulce",
+  "content": "interesante",
+  "publication": {
+    "$oid": "6825794c86a7fdd4dca77371"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T06:51:48.604Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T06:51:48.604Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68258f1086a7fdd4dca773a2"
+  },
+  "author": "Williams",
+  "content": "super aburrido",
+  "publication": {
+    "$oid": "6825794c86a7fdd4dca77371"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T06:52:00.924Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T06:52:00.924Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68259b1e86a7fdd4dca773fc"
+  },
+  "author": "Yamelet",
+  "content": "super aburrido >D",
+  "publication": {
+    "$oid": "6825794c86a7fdd4dca77371"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-15T07:43:26.582Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-15T07:43:26.582Z"
+  }
+}]

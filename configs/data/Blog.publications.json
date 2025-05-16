@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6825791b86a7fdd4dca7736f"
+  },
+  "title": "materia mas aburrida",
+  "description": "zzz",
+  "category": "Taller",
+  "comments": [
+    {
+      "$oid": "68258eee86a7fdd4dca77396"
+    },
+    {
+      "$oid": "68258ef986a7fdd4dca7739a"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6825794c86a7fdd4dca77371"
+  },
+  "title": "materia mas aburrida",
+  "description": "zzz",
+  "category": "Tecnologia",
+  "comments": [
+    {
+      "$oid": "68258f0486a7fdd4dca7739e"
+    },
+    {
+      "$oid": "68258f1086a7fdd4dca773a2"
+    },
+    {
+      "$oid": "68259b1e86a7fdd4dca773fc"
+    }
+  ],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6825795a86a7fdd4dca77373"
+  },
+  "title": "materia mas aburrida",
+  "description": "zzz",
+  "category": "Practica_Supervisada",
+  "comments": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68258ae286a7fdd4dca77381"
+  },
+  "title": "materia mas aburrida",
+  "description": "dulce",
+  "category": "Practica_Supervisada",
+  "comments": [],
+  "status": true,
+  "__v": 0
+}]
