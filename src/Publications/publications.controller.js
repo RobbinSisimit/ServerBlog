@@ -1,5 +1,4 @@
 import Publications from './publications.model.js';
-import comments from '../comments/comment.model.js'
 
 
 
@@ -33,10 +32,11 @@ export const getPublications = async (req, res) => {
     const publications = await Publications.find(query)
       .populate('comments', 'author content');
 
-    // Desestructuramos los campos si queremos devolver solo los necesarios
+    // Incluir el _id en el resultado
     const formatted = publications.map(pub => {
-      const { title, description, category, comments } = pub;
+      const { _id, title, description, category, comments } = pub;  // Incluir _id aquí
       return {
+        _id,  // Devolvemos también el _id
         title,
         description,
         category,
@@ -59,6 +59,7 @@ export const getPublications = async (req, res) => {
     });
   }
 };
+
 
 
 export const updatePublication = async (req, res) => {
