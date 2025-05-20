@@ -76,7 +76,7 @@ export const deleteComent = async (req, res) => {
         const comment = await Comments.findById(id);
         if(!comment) {
             return res.status(404).json({
-                success: false,
+                success: false, 
                 message: "Comentario no encontrado"
             })
         }

@@ -1,5 +1,5 @@
 import Publications from './publications.model.js';
-
+import Comment from '../comments/comment.model.js'
 
 
 export const createPublication = async (req, res) => {
@@ -26,40 +26,31 @@ export const createPublication = async (req, res) => {
 };
 
 export const getPublications = async (req, res) => {
-  const query = { status: true };
+    const { limite = 10, desde = 0 } = req.query;
+    const query = { status: true };
 
-  try {
-    const publications = await Publications.find(query)
-      .populate('comments', 'author content');
+    try {
+        const [total, publication] = await Promise.all([
+            Publications.countDocuments(query),
+            Publications.find(query)
+                .populate({ path: 'comments', match: { status: true }, select: 'comment author createdAt', options: { sort: { createdAt: -1 } } })
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
 
-    // Incluir el _id en el resultado
-    const formatted = publications.map(pub => {
-      const { _id, title, description, category, comments } = pub;  // Incluir _id aquí
-      return {
-        _id,  // Devolvemos también el _id
-        title,
-        description,
-        category,
-        comments: comments.map(c => ({
-          author: c.author,
-          content: c.content
-        }))
-      };
-    });
-
-    res.status(200).json({
-      success: true,
-      msg: 'Lista de publicaciones',
-      publications: formatted
-    });
-
-  } catch (error) {
-    return res.status(500).json({
-      error: error.message
-    });
-  }
-};
-
+        res.status(200).json({
+            succes: true,
+            total,
+            publication
+        })
+    } catch (error) {
+        res.status(500).json({
+            succes: false,
+            msg: 'Error al obtener la publicacion',
+            error: error.message
+        })
+    }
+}
 
 
 export const updatePublication = async (req, res) => {

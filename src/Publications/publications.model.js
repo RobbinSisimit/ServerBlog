@@ -1,20 +1,20 @@
-import mongoose from "mongoose";
+import {Schema, model} from "mongoose";
 
-const PublicationsSchema = new mongoose.Schema({
+const PublicationsSchema = Schema({
   title: {
     type: String,
-    required: [true, "El title es obligatorio"]
+    required: true
   },
   description: {
     type: String,
-    required: [true, "El description es obligatorio"]
+    required: true
   },
   category: {
     type: String,
     enum: ["Practica_Supervisada", "Taller", "Tecnologia"]
   },
   comments:[{
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Comments",
     required: false
   }],
@@ -29,4 +29,4 @@ const PublicationsSchema = new mongoose.Schema({
   }
 );
 
-export default mongoose.model("Publications", PublicationsSchema);
+export default model("Publications", PublicationsSchema);
