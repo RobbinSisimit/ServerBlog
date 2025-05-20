@@ -11,18 +11,22 @@ const PublicationsSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: [true, "El category es obligatorio"],
     enum: ["Practica_Supervisada", "Taller", "Tecnologia"]
   },
   comments:[{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Comments"
+    ref: "Comments",
+    required: false
   }],
   status: {
     type: Boolean,
     default: true
   }
 },
+  {
+    timestamps: true,
+    versionKey: false
+  }
 );
 
 export default mongoose.model("Publications", PublicationsSchema);

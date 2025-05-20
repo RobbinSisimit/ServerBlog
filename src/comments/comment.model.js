@@ -3,7 +3,7 @@ import {Schema, model} from "mongoose";
 const CommentSchema = new Schema({
     author: {
         type: String,
-        required: [true, "El author es obligatorio"]
+        default: "Anónimo"
     },
     content: {
         type: String,

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import { getComments, creatComment } from './comments.controller.js';
+import { getComments, creatComment, updateComment,deleteComent } from './comments.controller.js';
 import { validarCampos } from "../middlewares/validar-campos.js";
 
 const router = Router();
@@ -10,12 +10,27 @@ router.get('/', getComments);
 router.post(
     "/",
     [
-        check("author", "El autor es obligatorio").not().isEmpty(),
-        check("content", "El contenido es obligatorio").not().isEmpty(),
-        check("publication", "La publicacion es obligatoria").not().isEmpty(),
         validarCampos
     ],
     creatComment
+)
+
+router.delete(
+    "/:id",
+    [
+        check("id", "No es un id de Mongo").isMongoId(),
+        validarCampos
+    ],
+    deleteComent
+)
+
+router.put(
+    "/:id",
+    [
+        check("id", "No es un id de Mongo").isMongoId(),
+        validarCampos
+    ],
+    updateComment
 )
 
 export default router;
